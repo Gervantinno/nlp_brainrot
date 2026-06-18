@@ -1,4 +1,23 @@
-import csvText from '../../пример корпуса.csv?raw';
-import { parseCsv, type Word } from '../utils/parseCsv';
+import type { Word } from '../types/word';
+import { parseCsv } from '../utils/parseCsv';
 
-export const words: Word[] = parseCsv(csvText);
+let cachedWords: Word[] | null = null;
+
+export async function loadWords(): Promise<Word[]> {
+  if (cachedWords) {
+    return cachedWords;
+  }
+
+  const response = await fetch('пример корпуса.csv');
+  const csvText = await response.text();
+  cachedWords = parseCsv(csvText);
+  
+  return cachedWords;
+}
+
+export function getWordsSync(): Word[] {
+  if (!cachedWords) {
+    throw new Error('Words not loaded yet. Call loadWords() first.');
+  }
+  return cachedWords;
+}
