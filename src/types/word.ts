@@ -7,4 +7,5 @@ export interface Word {
   meanSurprisal: number;
   examples: string[];
   meaning: string;
+  kind: string;
 }

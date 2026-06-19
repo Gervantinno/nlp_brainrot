@@ -16,7 +16,12 @@ export function OptionsList({ words, onSelect }: OptionsListProps) {
           className="option-item"
           onClick={() => onSelect(index)}
         >
-          <span className="option-word">{word.word}</span>
+          <div className="option-words">
+            <span className="option-word">{word.word}</span>
+            {word.canonical !== word.word && (
+              <span className="option-canonical">{word.canonical}</span>
+            )}
+          </div>
           <span className="option-pos">{word.pos}</span>
         </button>
       ))}

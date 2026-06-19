@@ -21,7 +21,24 @@
   color: #1a1a18;
 }
 
-.result-pos {
+.result-word-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.result-canonical {
+  font-size: 14px;
+  color: #5a5a55;
+}
+
+.result-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.result-pos,
+.result-kind {
   background: #e8e8e4;
   color: #5a5a55;
   padding: 4px 12px;

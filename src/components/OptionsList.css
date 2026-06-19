@@ -44,6 +44,18 @@
   color: #2a2a28;
 }
 
+.option-words {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.option-canonical {
+  font-size: 13px;
+  color: #5a5a55;
+}
+
 .option-pos {
   background: #e8e8e4;
   color: #5a5a55;

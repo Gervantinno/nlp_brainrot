@@ -18,8 +18,16 @@ export function WordCard({ word, showBack = false, onBack }: WordCardProps) {
       )}
       
       <div className="result-header">
-        <h3 className="result-word">{word.word}</h3>
-        <span className="result-pos">{word.pos}</span>
+        <div className="result-word-container">
+          <h3 className="result-word">{word.word}</h3>
+          {word.canonical !== word.word && (
+            <span className="result-canonical">{word.canonical}</span>
+          )}
+        </div>
+        <div className="result-tags">
+          <span className="result-pos">{word.pos}</span>
+          {word.kind && <span className="result-kind">{word.kind}</span>}
+        </div>
       </div>
 
       <div className="result-forms">
