@@ -8,7 +8,7 @@ export async function loadWords(): Promise<Word[]> {
     return cachedWords;
   }
 
-  const response = await fetch('final_corpus-2.csv');
+  const response = await fetch('final_corpus.csv');
   const csvText = await response.text();
   cachedWords = parseCsv(csvText);
   

@@ -34,9 +34,11 @@ export function WordCard({ word, showBack = false, onBack }: WordCardProps) {
         <strong>Формы:</strong> {word.forms.join(', ')}
       </div>
 
-      <div className="result-meaning">
-        <strong>Значение:</strong> {word.meaning}
-      </div>
+      {word.meaning && (
+        <div className="result-meaning">
+          <strong>Значение:</strong> {word.meaning}
+        </div>
+      )}
 
       <div className="result-examples">
         <strong>Примеры:</strong>
